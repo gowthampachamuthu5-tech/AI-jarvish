@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050a12">
+    <title>JARVIS AI | Navigation</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Lucide icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- JARVIS NAVBAR -->
+    <header class="navbar">
+        <a href="#home" class="logo" aria-label="JARVIS home">
+            <div class="logo-icon">
+                <i data-lucide="orbit"></i>
+            </div>
+            <div class="logo-text">
+                <span class="logo-name">J.A.R.V.I.S.</span>
+                <span class="logo-subtitle">AI INTELLIGENCE SYSTEM</span>
+            </div>
+        </a>
+
+        <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navMenu">
+            <i data-lucide="menu"></i>
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#dashboard" class="nav-link">Dashboard</a>
+            <a href="#about" class="nav-link">About</a>
+
+            <div class="mobile-status">
+                <span class="status-dot"></span>
+                SYSTEM ONLINE
+            </div>
+
+            <a href="#assistant" class="launch-btn mobile-launch">
+                <i data-lucide="zap"></i>
+                Launch JARVIS
+            </a>
+        </nav>
+
+        <div class="nav-actions">
+            <div class="system-status">
+                <span class="status-dot"></span>
+                <span>SYSTEM ONLINE</span>
+            </div>
+
+            <a href="#assistant" class="launch-btn">
+                <i data-lucide="zap"></i>
+                <span>Launch JARVIS</span>
+                <i data-lucide="arrow-up-right" class="launch-arrow"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Demo sections: replace these with your real website sections -->
+    <main>
+        <section id="home" class="demo-section">
+            <span class="eyebrow">PERSONAL AI ASSISTANT</span>
+            <h1>Welcome to <span>JARVIS AI</span></h1>
+            <p>Your intelligent digital world starts here.</p>
+        </section>
+
+        <section id="features" class="demo-section">
+            <h2>Features</h2>
+            <p>Voice commands, intelligent assistance, and smart tools.</p>
+        </section>
+
+        <section id="dashboard" class="demo-section">
+            <h2>Dashboard</h2>
+            <p>Your AI control center.</p>
+        </section>
+
+        <section id="about" class="demo-section">
+            <h2>About JARVIS</h2>
+            <p>Designed for a smarter digital experience.</p>
+        </section>
+
+        <section id="assistant" class="demo-section">
+            <h2>Initialize JARVIS</h2>
+            <p>Your assistant interface will go here.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- JARVIS AI HERO / LANDING SECTION -->
+<section class="jarvis-hero" id="home">
+
+    <!-- Animated background -->
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <canvas id="heroParticles" aria-hidden="true"></canvas>
+
+    <!-- Main content -->
+    <div class="hero-container">
+
+        <!-- Left content -->
+        <div class="hero-content">
+
+            <div class="hero-eyebrow">
+                <span class="eyebrow-line"></span>
+                <span>NEXT-GENERATION INTELLIGENCE</span>
+            </div>
+
+            <h1 class="hero-title">
+                Your World.
+                <span>Intelligently</span>
+                <span class="title-outline">Connected.</span>
+            </h1>
+
+            <p class="hero-description">
+                Meet JARVIS, your personal AI companion.
+                Transform your ideas into action with intelligent
+                conversations, voice interaction, and a smarter
+                digital experience.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="hero-btn primary-btn" id="initializeBtn">
+                    <i data-lucide="zap"></i>
+                    <span>Initialize JARVIS</span>
+                    <i data-lucide="arrow-up-right" class="btn-arrow"></i>
+                </button>
+
+                <a href="#features" class="hero-btn secondary-btn">
+                    <i data-lucide="layers"></i>
+                    <span>Explore Features</span>
+                </a>
+
+            </div>
+
+            <!-- System information -->
+            <div class="hero-system-info">
+
+                <div class="system-item">
+                    <span class="system-dot"></span>
+                    <div>
+                        <span class="system-label">AI INTERFACE</span>
+                        <span class="system-value" id="interfaceStatus">
+                            STANDBY
+                        </span>
+                    </div>
+                </div>
+
+                <div class="system-divider"></div>
+
+                <div class="system-item">
+                    <i data-lucide="clock-3"></i>
+                    <div>
+                        <span class="system-label">LOCAL TIME</span>
+                        <span class="system-value" id="heroClock">
+                            --:--:--
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hero-scroll">
+                <span class="scroll-line"></span>
+                <span>SCROLL TO EXPLORE</span>
+            </div>
+
+        </div>
+
+        <!-- Right: Holographic AI core -->
+        <div class="hero-visual">
+
+            <div class="core-label label-top">
+                <span class="label-indicator"></span>
+                NEURAL CORE
+            </div>
+
+            <div class="ai-core" id="aiCore">
+
+                <!-- Orbital rings -->
+                <div class="core-ring ring-outer">
+                    <span class="ring-node node-one"></span>
+                    <span class="ring-node node-two"></span>
+                </div>
+
+                <div class="core-ring ring-middle">
+                    <span class="ring-node node-three"></span>
+                </div>
+
+                <div class="core-ring ring-inner"></div>
+
+                <!-- Core center -->
+                <div class="core-center">
+                    <div class="core-inner-glow"></div>
+                    <i data-lucide="orbit" class="core-icon"></i>
+                    <span class="core-text">J.A.R.V.I.S.</span>
+                    <span class="core-subtext">INTELLIGENCE CORE</span>
+                </div>
+
+                <!-- Decorative targeting marks -->
+                <div class="target target-top"></div>
+                <div class="target target-bottom"></div>
+                <div class="target target-left"></div>
+                <div class="target target-right"></div>
+
+            </div>
+
+            <div class="core-label label-bottom">
+                <span class="live-pulse"></span>
+                SYSTEMS NOMINAL
+            </div>
+
+            <!-- Floating data panels -->
+            <div class="data-panel panel-left">
+                <span class="panel-heading">PROCESSING</span>
+                <div class="panel-wave">
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                </div>
+                <span class="panel-caption">NEURAL ACTIVITY</span>
+            </div>
+
+            <div class="data-panel panel-right">
+                <span class="panel-heading">CORE STATUS</span>
+                <span class="panel-number">ACTIVE</span>
+                <div class="panel-progress">
+                    <span></span>
+                </div>
+                <span class="panel-caption">INTERFACE READY</span>
+            </div>
+
+            <div class="visual-coordinate">
+                SYS.01 / AI.ENGINE / <span>ONLINE</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bottom information strip -->
+    <div class="hero-bottom-bar">
+        <span>JARVIS AI <span class="bar-separator">/</span> PERSONAL INTELLIGENCE</span>
+        <span class="bottom-center">BUILT FOR THE FUTURE</span>
+        <span>VERSION 1.0 <span class="bar-separator">/</span> <span id="heroDate">--</span></span>
+    </div>
+
+</section>
+<!-- =====================================
+     JARVIS AI - VOICE ASSISTANT SECTION
+     ===================================== -->
+
+<section class="voice-assistant" id="assistant">
+
+    <div class="voice-grid"></div>
+    <div class="voice-background-glow"></div>
+
+    <div class="voice-container">
+
+        <!-- Section heading -->
+        <div class="voice-heading">
+            <span class="voice-eyebrow">
+                <span class="voice-eyebrow-line"></span>
+                JARVIS INTERACTIVE SYSTEM
+            </span>
+
+            <h2>
+                Your Voice.
+                <span>Your Intelligence.</span>
+            </h2>
+
+            <p>
+                Talk naturally with your personal digital assistant.
+                Activate the microphone, ask a question, and hear
+                JARVIS respond.
+            </p>
+        </div>
+
+        <!-- Main assistant interface -->
+        <div class="voice-console">
+
+            <!-- Left system information -->
+            <aside class="voice-side-panel">
+                <div class="voice-panel-title">
+                    <i data-lucide="cpu"></i>
+                    SYSTEM MONITOR
+                </div>
+
+                <div class="voice-metric">
+                    <span>INTERFACE</span>
+                    <strong id="voiceInterfaceStatus">STANDBY</strong>
+                </div>
+
+                <div class="voice-metric">
+                    <span>INPUT CHANNEL</span>
+                    <strong id="voiceInputStatus">READY</strong>
+                </div>
+
+                <div class="voice-metric">
+                    <span>OUTPUT CHANNEL</span>
+                    <strong id="voiceOutputStatus">READY</strong>
+                </div>
+
+                <div class="voice-separator"></div>
+
+                <div class="voice-mini-heading">
+                    AVAILABLE COMMANDS
+                </div>
+
+                <button class="voice-command" data-command="What time is it?">
+                    <i data-lucide="clock"></i>
+                    <span>Current time</span>
+                    <i data-lucide="arrow-up-right"></i>
+                </button>
+
+                <button class="voice-command" data-command="Tell me a joke">
+                    <i data-lucide="smile"></i>
+                    <span>Tell me a joke</span>
+                    <i data-lucide="arrow-up-right"></i>
+                </button>
+
+                <button class="voice-command" data-command="What can you do?">
+                    <i data-lucide="sparkles"></i>
+                    <span>AI capabilities</span>
+                    <i data-lucide="arrow-up-right"></i>
+                </button>
+
+            </aside>
+
+            <!-- Center voice reactor -->
+            <div class="voice-main">
+
+                <div class="voice-core-caption">
+                    <span class="voice-live-dot"></span>
+                    <span id="voiceCoreLabel">VOICE CORE STANDBY</span>
+                </div>
+
+                <div class="voice-reactor" id="voiceReactor">
+
+                    <div class="voice-reactor-ring reactor-ring-one"></div>
+                    <div class="voice-reactor-ring reactor-ring-two"></div>
+                    <div class="voice-reactor-ring reactor-ring-three"></div>
+
+                    <div class="voice-reactor-orbit orbit-one">
+                        <span></span>
+                    </div>
+
+                    <div class="voice-reactor-orbit orbit-two">
+                        <span></span>
+                    </div>
+
+                    <div class="voice-reactor-center">
+                        <div class="voice-center-glow"></div>
+
+                        <i data-lucide="mic" id="voiceMicIcon"></i>
+
+                        <span class="voice-core-name">J.A.R.V.I.S.</span>
+                        <span class="voice-core-subtitle">VOICE INTERFACE</span>
+                    </div>
+
+                </div>
+
+                <div class="voice-state" id="voiceState" aria-live="polite">
+                    Ready when you are.
+                </div>
+
+                <p class="voice-instruction" id="voiceInstruction">
+                    Press the microphone and start speaking.
+                </p>
+
+                <button class="voice-mic-button" id="voiceMicButton"
+                        type="button" aria-pressed="false">
+                    <i data-lucide="mic"></i>
+                    <span>Activate Microphone</span>
+                </button>
+
+                <div class="voice-support-note" id="voiceSupportNote">
+                    Voice recognition availability depends on your browser.
+                </div>
+
+            </div>
+
+            <!-- Right transcript panel -->
+            <aside class="voice-side-panel transcript-panel">
+
+                <div class="voice-panel-title">
+                    <i data-lucide="audio-lines"></i>
+                    LIVE TRANSCRIPT
+                </div>
+
+                <div class="transcript-box" id="voiceTranscript"
+                     aria-live="polite" aria-atomic="false">
+                    <div class="transcript-placeholder">
+                        <i data-lucide="message-circle"></i>
+                        <span>Your conversation will appear here.</span>
+                    </div>
+                </div>
+
+                <form class="voice-text-form" id="voiceTextForm">
+                    <label for="voiceTextInput">TYPE A MESSAGE</label>
+
+                    <div class="voice-input-row">
+                        <input
+                            type="text"
+                            id="voiceTextInput"
+                            placeholder="Ask JARVIS..."
+                            autocomplete="off"
+                            maxlength="500"
+                        >
+
+                        <button type="submit" aria-label="Send message">
+                            <i data-lucide="send"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <button class="voice-stop-button" id="voiceStopButton"
+                        type="button">
+                    <i data-lucide="volume-x"></i>
+                    Stop speech
+                </button>
+
+            </aside>
+
+        </div>
+
+        <!-- Footer status -->
+        <div class="voice-footer">
+            <span><span class="footer-dot"></span> LOCAL VOICE INTERFACE</span>
+            <span>J.A.R.V.I.S. / VOICE MODULE 01</span>
+            <span id="voiceFooterStatus">SYSTEM READY</span>
+        </div>
+
+    </div>
+</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070b14">
+  <title>JARVIS AI Chat</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">J</div>
+        <div>
+          <h2>JARVIS<span> AI</span></h2>
+          <small>PERSONAL INTELLIGENCE</small>
+        </div>
+      </div>
+
+      <button class="new-chat-btn" id="newChatBtn">
+        <span>＋</span> New conversation
+      </button>
+
+      <div class="side-label">WORKSPACE</div>
+      <button class="side-link active" id="chatNav">
+        <span>▤</span> AI Chat
+      </button>
+      <button class="side-link" id="focusBtn">
+        <span>✧</span> Focus mode
+      </button>
+
+      <div class="side-label">QUICK PROMPTS</div>
+      <button class="side-link prompt-link" data-prompt="Explain artificial intelligence simply.">
+        <span>◈</span> Learn AI
+      </button>
+      <button class="side-link prompt-link" data-prompt="Give me five creative project ideas.">
+        <span>⌘</span> Project ideas
+      </button>
+      <button class="side-link prompt-link" data-prompt="Write a JavaScript function that reverses a string.">
+        <span>⌁</span> Coding help
+      </button>
+
+      <div class="sidebar-bottom">
+        <div class="online-indicator"></div>
+        <div>
+          <strong>System online</strong>
+          <small>Local demo mode</small>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main chat area -->
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn menu-btn" id="menuBtn"
+                  aria-label="Toggle sidebar">☰</button>
+          <div>
+            <h1>AI Chat Interface</h1>
+            <p><span class="status-dot"></span> JARVIS is ready</p>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <span class="mode-label">DARK MODE</span>
+          <button class="icon-btn" id="clearBtn" title="Clear conversation"
+                  aria-label="Clear conversation">⌫</button>
+        </div>
+      </header>
+
+      <section class="chat-area" id="chatArea">
+        <div class="welcome" id="welcome">
+          <div class="welcome-orb">
+            <div class="orb-ring ring-one"></div>
+            <div class="orb-ring ring-two"></div>
+            <div class="orb-core">J</div>
+          </div>
+
+          <p class="eyebrow">YOUR AI ASSISTANT</p>
+          <h2>How can I help you<br><span>today?</span></h2>
+          <p class="welcome-description">
+            Ask a question, explore an idea, or start building something amazing.
+          </p>
+
+          <div class="suggestion-grid">
+            <button class="suggestion" data-prompt="Explain artificial intelligence simply.">
+              <span class="suggestion-icon purple">✧</span>
+              <strong>Explain AI</strong>
+              <small>Understand a new concept</small>
+            </button>
+
+            <button class="suggestion" data-prompt="Give me five creative website ideas.">
+              <span class="suggestion-icon blue">◈</span>
+              <strong>Generate ideas</strong>
+              <small>Explore creative projects</small>
+            </button>
+
+            <button class="suggestion" data-prompt="Write a simple HTML page with a heading and button.">
+              <span class="suggestion-icon cyan">⌘</span>
+              <strong>Write code</strong>
+              <small>Build your next project</small>
+            </button>
+
+            <button class="suggestion" data-prompt="Give me a simple productivity plan for today.">
+              <span class="suggestion-icon orange">↗</span>
+              <strong>Get productive</strong>
+              <small>Plan your next steps</small>
+            </button>
+          </div>
+        </div>
+
+        <div class="messages" id="messages" aria-live="polite"></div>
+      </section>
+
+      <!-- Message composer -->
+      <footer class="composer-wrap">
+        <form class="composer" id="chatForm">
+          <textarea
+            id="messageInput"
+            rows="1"
+            maxlength="4000"
+            placeholder="Message JARVIS..."
+            aria-label="Write your message"
+          ></textarea>
+
+          <div class="composer-bottom">
+            <span class="composer-hint">Enter to send · Shift + Enter for a new line</span>
+            <div class="composer-actions">
+              <span id="charCount">0 / 4000</span>
+              <button class="send-btn" id="sendBtn" type="submit"
+                      aria-label="Send message" disabled>
+                <span>➤</span>
+              </button>
+            </div>
+          </div>
+        </form>
+        <p class="disclaimer">
+          JARVIS demo can make mistakes. Verify important information.
+        </p>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- JARVIS SMART DASHBOARD -->
+<section class="smart-dashboard" id="dashboard">
+
+  <!-- Dashboard Header -->
+  <header class="dash-header">
+    <div class="dash-heading">
+      <span class="dash-eyebrow">JARVIS / CONTROL SYSTEM</span>
+      <h2>Smart Dashboard <span class="dash-glow">.</span></h2>
+      <p>Welcome back. Here's your system overview.</p>
+    </div>
+
+    <div class="dash-header-actions">
+      <div class="dash-clock">
+        <span id="dashTime">--:--:--</span>
+        <small id="dashDate">Loading date...</small>
+      </div>
+
+      <button type="button" class="dash-icon-btn"
+              id="dashRefresh" aria-label="Refresh dashboard">
+        ↻
+      </button>
+    </div>
+  </header>
+
+  <!-- System Status -->
+  <div class="dash-system-status">
+    <span class="dash-status-light"></span>
+    <span>JARVIS SYSTEM ONLINE</span>
+    <span class="dash-status-divider">/</span>
+    <span id="dashStatusText">All demo services operational</span>
+  </div>
+
+  <!-- Statistics Cards -->
+  <div class="dash-stats-grid">
+
+    <article class="dash-stat-card">
+      <div class="dash-stat-top">
+        <span>System Activity</span>
+        <span class="dash-stat-icon cyan-icon">⌁</span>
+      </div>
+      <div class="dash-stat-value">
+        <strong id="activityValue">86.4</strong><span>%</span>
+      </div>
+      <div class="dash-progress-track">
+        <div class="dash-progress cyan-progress"
+             id="activityProgress" style="width:86.4%"></div>
+      </div>
+      <p class="dash-stat-note">Simulated activity level</p>
+    </article>
+
+    <article class="dash-stat-card">
+      <div class="dash-stat-top">
+        <span>Tasks Completed</span>
+        <span class="dash-stat-icon purple-icon">✓</span>
+      </div>
+      <div class="dash-stat-value">
+        <strong id="completedValue">12</strong>
+      </div>
+      <div class="dash-mini-bars" aria-hidden="true">
+        <i style="height:35%"></i>
+        <i style="height:55%"></i>
+        <i style="height:45%"></i>
+        <i style="height:75%"></i>
+        <i style="height:60%"></i>
+        <i style="height:90%"></i>
+        <i style="height:100%"></i>
+      </div>
+      <p class="dash-stat-note">Completed in this session</p>
+    </article>
+
+    <article class="dash-stat-card">
+      <div class="dash-stat-top">
+        <span>Response Speed</span>
+        <span class="dash-stat-icon orange-icon">ϟ</span>
+      </div>
+      <div class="dash-stat-value">
+        <strong id="responseValue">124</strong><span>ms</span>
+      </div>
+      <div class="dash-response-line">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <p class="dash-stat-note">Illustrative demo metric</p>
+    </article>
+
+    <article class="dash-stat-card">
+      <div class="dash-stat-top">
+        <span>Security Status</span>
+        <span class="dash-stat-icon green-icon">◇</span>
+      </div>
+      <div class="dash-security-value">
+        <span class="dash-security-dot"></span>
+        <strong>Protected</strong>
+      </div>
+      <div class="dash-security-line">
+        <span>UI status indicator</span>
+        <span>DEMO</span>
+      </div>
+      <p class="dash-stat-note">No security scan performed</p>
+    </article>
+
+  </div>
+
+  <!-- Main Dashboard Grid -->
+  <div class="dash-main-grid">
+
+    <!-- Performance Chart -->
+    <article class="dash-panel dash-performance">
+      <div class="dash-panel-header">
+        <div>
+          <span class="dash-panel-label">ANALYTICS</span>
+          <h3>Performance Monitor</h3>
+        </div>
+
+        <select id="dashChartRange" class="dash-select"
+                aria-label="Chart time range">
+          <option value="7">Last 7 points</option>
+          <option value="12">Last 12 points</option>
+        </select>
+      </div>
+
+      <div class="dash-chart-summary">
+        <strong id="chartCurrentValue">86.4%</strong>
+        <span>Simulated activity</span>
+      </div>
+
+      <div class="dash-chart" id="dashChart"
+           role="img" aria-label="Illustrative activity line chart">
+        <svg id="dashChartSvg" viewBox="0 0 600 200"
+             preserveAspectRatio="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="dashChartFill"
+                            x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#55e7ff"
+                    stop-opacity="0.23"/>
+              <stop offset="100%" stop-color="#55e7ff"
+                    stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <g id="dashChartGrid"></g>
+          <path id="dashChartArea" fill="url(#dashChartFill)"></path>
+          <path id="dashChartLine" fill="none"
+                stroke="#55e7ff" stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+          <g id="dashChartPoints"></g>
+        </svg>
+      </div>
+
+      <div class="dash-chart-labels" id="dashChartLabels"></div>
+      <p class="dash-chart-footnote">
+        Demo values only · Not measured system performance
+      </p>
+    </article>
+
+    <!-- Activity Feed -->
+    <article class="dash-panel">
+      <div class="dash-panel-header">
+        <div>
+          <span class="dash-panel-label">SYSTEM LOG</span>
+          <h3>Recent Activity</h3>
+        </div>
+        <span class="dash-live-tag">LIVE UI</span>
+      </div>
+
+      <div class="dash-activity-list" id="dashActivityList">
+        <div class="dash-activity-item">
+          <span class="dash-activity-icon activity-cyan">⌘</span>
+          <div>
+            <strong>Dashboard initialized</strong>
+            <p>Interface loaded successfully</p>
+            <small>Just now</small>
+          </div>
+        </div>
+
+        <div class="dash-activity-item">
+          <span class="dash-activity-icon activity-purple">✧</span>
+          <div>
+            <strong>AI interface ready</strong>
+            <p>Demo controls are available</p>
+            <small>Session event</small>
+          </div>
+        </div>
+
+        <div class="dash-activity-item">
+          <span class="dash-activity-icon activity-green">✓</span>
+          <div>
+            <strong>Dashboard connected</strong>
+            <p>Local interface is running</p>
+            <small>Session event</small>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="dash-text-btn"
+              id="dashClearActivity">
+        Clear activity log →
+      </button>
+    </article>
+
+  </div>
+
+  <!-- Tasks and Quick Actions -->
+  <div class="dash-bottom-grid">
+
+    <article class="dash-panel dash-tasks-panel">
+      <div class="dash-panel-header">
+        <div>
+          <span class="dash-panel-label">PRODUCTIVITY</span>
+          <h3>Task Manager</h3>
+        </div>
+        <span class="dash-task-count" id="dashTaskCount">0 tasks</span>
+      </div>
+
+      <form class="dash-task-form" id="dashTaskForm">
+        <input id="dashTaskInput" type="text"
+               maxlength="100"
+               placeholder="Enter a new task..."
+               aria-label="New task" required>
+        <button type="submit" aria-label="Add task">+</button>
+      </form>
+
+      <div class="dash-task-list" id="dashTaskList">
+        <p class="dash-empty-tasks" id="dashEmptyTasks">
+          No tasks yet. Add your first task above.
+        </p>
+      </div>
+    </article>
+
+    <article class="dash-panel">
+      <div class="dash-panel-header">
+        <div>
+          <span class="dash-panel-label">CONTROL CENTER</span>
+          <h3>Quick Actions</h3>
+        </div>
+      </div>
+
+      <div class="dash-quick-actions">
+        <button type="button" class="dash-action-btn"
+                data-dash-action="assistant">
+          <span class="dash-action-icon cyan-icon">✧</span>
+          <span><strong>AI Assistant</strong>
+            <small>Open assistant section</small></span>
+          <span class="dash-action-arrow">↗</span>
+        </button>
+
+        <button type="button" class="dash-action-btn"
+                data-dash-action="report">
+          <span class="dash-action-icon purple-icon">▤</span>
+          <span><strong>Generate Report</strong>
+            <small>View a demo summary</small></span>
+          <span class="dash-action-arrow">↗</span>
+        </button>
+
+        <button type="button" class="dash-action-btn"
+                data-dash-action="refresh">
+          <span class="dash-action-icon orange-icon">↻</span>
+          <span><strong>Refresh Metrics</strong>
+            <small>Update demo values</small></span>
+          <span class="dash-action-arrow">↗</span>
+        </button>
+      </div>
+    </article>
+
+  </div>
+
+  <footer class="dash-footer">
+    <span>JARVIS AI · SMART DASHBOARD</span>
+    <span>FRONTEND DEMO <span class="dash-footer-dot">●</span></span>
+  </footer>
+
+</section>
+<!-- ==============================
+     JARVIS FEATURES & CAPABILITIES
+================================== -->
+<section class="jarvis-features" id="features">
+
+  <!-- Section Heading -->
+  <div class="features-heading">
+    <span class="features-eyebrow">
+      <span class="features-eyebrow-dot"></span>
+      INTELLIGENCE MODULES
+    </span>
+
+    <h2>
+      One AI. <span>Endless Possibilities.</span>
+    </h2>
+
+    <p>
+      Discover the tools that make JARVIS your personal
+      intelligence and productivity companion.
+    </p>
+  </div>
+
+  <!-- Feature Statistics -->
+  <div class="features-stats">
+    <div class="features-stat">
+      <strong>01</strong>
+      <span>Intelligent Interface</span>
+    </div>
+
+    <div class="features-stat">
+      <strong>06</strong>
+      <span>Feature Modules</span>
+    </div>
+
+    <div class="features-stat">
+      <strong>24/7</strong>
+      <span>Designed for Access</span>
+    </div>
+  </div>
+
+  <!-- Feature Cards -->
+  <div class="features-grid">
+
+    <!-- Feature 1 -->
+    <article class="feature-card feature-cyan">
+      <div class="feature-card-top">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.7"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8
+              8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9
+              L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8
+              8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9
+              h.5a8.5 8.5 0 0 1 8 8z"/>
+          </svg>
+        </div>
+        <span class="feature-number">01 / AI</span>
+      </div>
+
+      <h3>AI Conversations</h3>
+      <p>
+        Interact with a modern chat interface to explore questions,
+        develop ideas, and get help with everyday tasks.
+      </p>
+
+      <div class="feature-tags">
+        <span>Chat Interface</span>
+        <span>Q&A</span>
+      </div>
+
+      <a class="feature-link" href="#assistant">
+        Explore assistant <span>↗</span>
+      </a>
+      <div class="feature-card-glow"></div>
+    </article>
+
+    <!-- Feature 2 -->
+    <article class="feature-card feature-purple">
+      <div class="feature-card-top">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.7"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <rect x="9" y="2" width="6" height="12" rx="3"/>
+            <path d="M5 10v2a7 7 0 0 0 14 0v-2"/>
+            <path d="M12 19v3m-4 0h8"/>
+          </svg>
+        </div>
+        <span class="feature-number">02 / VOICE</span>
+      </div>
+
+      <h3>Voice Assistant</h3>
+      <p>
+        Speak to your interface using supported browser speech
+        recognition and hear responses through speech synthesis.
+      </p>
+
+      <div class="feature-tags">
+        <span>Speech Input</span>
+        <span>Text to Speech</span>
+      </div>
+
+      <a class="feature-link" href="#assistant">
+        Try voice tools <span>↗</span>
+      </a>
+      <div class="feature-card-glow"></div>
+    </article>
+
+    <!-- Feature 3 -->
+    <article class="feature-card feature-blue">
+      <div class="feature-card-top">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.7"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="m8 17-5-5 5-5"/>
+            <path d="m16 7 5 5-5 5"/>
+            <path d="m14 4-4 16"/>
+          </svg>
+        </div>
+        <span class="feature-number">03 / CODE</span>
+      </div>
+
+      <h3>Code Assistant</h3>
+      <p>
+        Work on programming ideas, explore code examples,
+        and plan your next web development project.
+      </p>
+
+      <div class="feature-tags">
+        <span>HTML & CSS</span>
+        <span>JavaScript</span>
+      </div>
+
+      <a class="feature-link" href="#assistant">
+        Explore coding <span>↗</span>
+      </a>
+      <div class="feature-card-glow"></div>
+    </article>
+
+    <!-- Feature 4 -->
+    <article class="feature-card feature-orange">
+      <div class="feature-card-top">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.7"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="M3 3v18h18"/>
+            <path d="m19 9-5 5-4-4-5 5"/>
+            <path d="M15 9h4v4"/>
+          </svg>
+        </div>
+        <span class="feature-number">04 / DATA</span>
+      </div>
+
+      <h3>Smart Analytics</h3>
+      <p>
+        Review activity indicators, monitor task progress,
+        and organize information in one dashboard.
+      </p>
+
+      <div class="feature-tags">
+        <span>Data Views</span>
+        <span>Task Tracking</span>
+      </div>
+
+      <a class="feature-link" href="#dashboard">
+        View dashboard <span>↗</span>
+      </a>
+      <div class="feature-card-glow"></div>
+    </article>
+
+    <!-- Feature 5 -->
+    <article class="feature-card feature-green">
+      <div class="feature-card-top">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.7"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="M12 22s8-4 8-11V5l-8-3-8 3v6
+              c0 7 8 11 8 11z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+        </div>
+        <span class="feature-number">05 / SAFETY</span>
+      </div>
+
+      <h3>Privacy Awareness</h3>
+      <p>
+        Build safer workflows with clear permission prompts,
+        secure API handling, and transparent data practices.
+      </p>
+
+      <div class="feature-tags">
+        <span>Secure Design</span>
+        <span>Permissions</span>
+      </div>
+
+      <a class="feature-link" href="#security">
+        Learn more <span>↗</span>
+      </a>
+      <div class="feature-card-glow"></div>
+    </article>
+
+    <!-- Feature 6 -->
+    <article class="feature-card feature-pink">
+      <div class="feature-card-top">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.7"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="m12 3 1.9 5.8L20 11l-6.1 2.2L12 19
+              l-1.9-5.8L4 11l6.1-2.2L12 3z"/>
+            <path d="m19 14 1.3 2.7L23 18l-2.7 1.3L19 22
+              l-1.3-2.7L15 18l2.7-1.3L19 14z"/>
+          </svg>
+        </div>
+        <span class="feature-number">06 / PRODUCTIVITY</span>
+      </div>
+
+      <h3>Smart Productivity</h3>
+      <p>
+        Create tasks, explore project ideas, and organize
+        your next steps from one convenient workspace.
+      </p>
+
+      <div class="feature-tags">
+        <span>Task Manager</span>
+        <span>Quick Actions</span>
+      </div>
+
+      <a class="feature-link" href="#dashboard">
+        Get organized <span>↗</span>
+      </a>
+      <div class="feature-card-glow"></div>
+    </article>
+
+  </div>
+
+  <!-- Call to Action -->
+  <div class="features-cta">
+    <div class="features-cta-orb">J</div>
+
+    <div class="features-cta-text">
+      <span>YOUR NEXT-GEN WORKSPACE</span>
+      <h3>Ready to experience JARVIS?</h3>
+      <p>Start exploring your AI interface and its tools.</p>
+    </div>
+
+    <a href="#assistant" class="features-cta-btn">
+      Launch Assistant <span>↗</span>
+    </a>
+  </div>
+
+</section>
+<!-- =========================
+     JARVIS SECURITY SECTION
+========================= -->
+<section class="jarvis-security" id="security">
+  <div class="security-bg-grid"></div>
+  <div class="security-orb security-orb-1"></div>
+  <div class="security-orb security-orb-2"></div>
+
+  <div class="security-container">
+
+    <div class="security-heading">
+      <span class="security-eyebrow">
+        <span class="security-status-dot"></span>
+        SECURITY PROTOCOL
+      </span>
+
+      <h2>
+        Your Data.
+        <span>Your Control.</span>
+      </h2>
+
+      <p>
+        JARVIS is designed with privacy and security in mind.
+        Keep sensitive information protected while maintaining
+        complete control over your AI experience.
+      </p>
+    </div>
+
+    <div class="security-grid">
+
+      <!-- Security Card 1 -->
+      <article class="security-card">
+        <div class="security-icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3L20 6V11C20 16.5 16.5 20 12 21C7.5 20 4 16.5 4 11V6L12 3Z"
+                  stroke="currentColor"
+                  stroke-width="1.8"/>
+            <path d="M8.5 12L10.8 14.3L15.8 9.3"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div>
+          <h3>Secure by Design</h3>
+          <p>
+            Build your AI interface with security-focused
+            architecture and safer data-handling practices.
+          </p>
+        </div>
+
+        <span class="security-label">PROTECTED</span>
+      </article>
+
+      <!-- Security Card 2 -->
+      <article class="security-card">
+        <div class="security-icon purple">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="5" y="10" width="14" height="10" rx="2"
+                  stroke="currentColor"
+                  stroke-width="1.8"/>
+            <path d="M8 10V7C8 4.8 9.8 3 12 3C14.2 3 16 4.8 16 7V10"
+                  stroke="currentColor"
+                  stroke-width="1.8"/>
+            <circle cx="12" cy="15" r="1.3"
+                    fill="currentColor"/>
+          </svg>
+        </div>
+
+        <div>
+          <h3>Privacy First</h3>
+          <p>
+            Keep API keys, personal information and private
+            conversations away from the public frontend.
+          </p>
+        </div>
+
+        <span class="security-label purple-label">PRIVATE</span>
+      </article>
+
+      <!-- Security Card 3 -->
+      <article class="security-card">
+        <div class="security-icon blue">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3V7"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"/>
+            <path d="M12 17V21"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"/>
+            <path d="M3 12H7"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"/>
+            <path d="M17 12H21"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="4"
+                    stroke="currentColor"
+                    stroke-width="1.8"/>
+          </svg>
+        </div>
+
+        <div>
+          <h3>Permission Control</h3>
+          <p>
+            Give your AI assistant access only to the features
+            and resources it actually needs.
+          </p>
+        </div>
+
+        <span class="security-label blue-label">CONTROLLED</span>
+      </article>
+
+      <!-- Security Card 4 -->
+      <article class="security-card">
+        <div class="security-icon green">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 12C4 7.6 7.6 4 12 4C16.4 4 20 7.6 20 12"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"/>
+            <path d="M4 12C4 16.4 7.6 20 12 20"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"/>
+            <path d="M12 8V12L15 14"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div>
+          <h3>Always Aware</h3>
+          <p>
+            Monitor important system activity and keep
+            your AI workspace organized.
+          </p>
+        </div>
+
+        <span class="security-label green-label">ACTIVE</span>
+      </article>
+
+    </div>
+
+    <!-- Security status -->
+    <div class="security-status-panel">
+      <div class="status-left">
+        <div class="status-shield">
+          <span>✓</span>
+        </div>
+
+        <div>
+          <strong>JARVIS SECURITY STATUS</strong>
+          <small>Core interface protection enabled</small>
+        </div>
+      </div>
+
+      <div class="status-right">
+        <span class="status-online"></span>
+        <span>SECURE MODE</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     FINAL CTA SECTION
+========================= -->
+<section class="jarvis-final-cta" id="start-jarvis">
+
+  <div class="cta-particles"></div>
+  <div class="cta-glow"></div>
+
+  <div class="cta-container">
+
+    <span class="cta-eyebrow">
+      <span class="cta-line"></span>
+      SYSTEM READY
+      <span class="cta-line"></span>
+    </span>
+
+    <h2>
+      Are You Ready
+      <span>To Activate JARVIS?</span>
+    </h2>
+
+    <p>
+      Enter the next generation of intelligent interfaces.
+      Talk, create, analyze and control your digital workspace
+      from one futuristic AI command center.
+    </p>
+
+    <div class="cta-buttons">
+
+      <button class="cta-primary" id="activateJarvisBtn">
+        <span class="cta-button-icon">◉</span>
+        ACTIVATE JARVIS
+        <span class="cta-arrow">→</span>
+      </button>
+
+      <a href="#features" class="cta-secondary">
+        EXPLORE FEATURES
+        <span>↗</span>
+      </a>
+
+    </div>
+
+    <div class="cta-system-info">
+      <div>
+        <span class="info-dot"></span>
+        AI CORE READY
+      </div>
+
+      <div>
+        <span class="info-dot"></span>
+        VOICE ONLINE
+      </div>
+
+      <div>
+        <span class="info-dot"></span>
+        SYSTEM STANDBY
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     JARVIS FOOTER
+========================= -->
+<footer class="jarvis-footer">
+
+  <div class="footer-top-line"></div>
+
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+
+      <a href="#home" class="footer-logo">
+        <span class="footer-logo-core">J</span>
+
+        <span class="footer-logo-text">
+          JARVIS
+          <small>AI COMMAND SYSTEM</small>
+        </span>
+      </a>
+
+      <p>
+        An intelligent futuristic interface designed to
+        bring AI, voice control and smart productivity
+        into one powerful workspace.
+      </p>
+
+      <div class="footer-status">
+        <span class="footer-status-dot"></span>
+        SYSTEM ONLINE
+      </div>
+
+    </div>
+
+
+    <!-- Navigation -->
+    <div class="footer-column">
+      <h3>Navigation</h3>
+
+      <a href="#home">Home</a>
+      <a href="#assistant">AI Assistant</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#features">Features</a>
+      <a href="#security">Security</a>
+    </div>
+
+
+    <!-- Modules -->
+    <div class="footer-column">
+      <h3>Modules</h3>
+
+      <a href="#assistant">Voice Control</a>
+      <a href="#assistant">AI Chat</a>
+      <a href="#dashboard">Analytics</a>
+      <a href="#dashboard">Productivity</a>
+      <a href="#security">Privacy</a>
+    </div>
+
+
+    <!-- System -->
+    <div class="footer-column">
+      <h3>System</h3>
+
+      <span>Core Version: 1.0.0</span>
+      <span>Interface: Online</span>
+      <span>AI Status: Ready</span>
+      <span>Security: Active</span>
+      <span>Response: Optimized</span>
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <div>
+      © <span id="footerYear"></span> JARVIS AI.
+      All systems reserved.
+    </div>
+
+    <div class="footer-bottom-links">
+      <a href="#security">Privacy</a>
+      <a href="#security">Security</a>
+      <a href="#home">Back to top ↑</a>
+    </div>
+
+  </div>
+
+</footer>
